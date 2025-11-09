@@ -11,7 +11,6 @@ HOME = "/home/programmer"
 def install(relative_path: str, dst: str):
   configuration_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), relative_path)
   is_single_file = os.path.isfile(configuration_path) and os.path.isfile(dst)
-  print(configuration_path)
   if not is_single_file:
     os.makedirs(dst, exist_ok=True)
 
@@ -48,29 +47,22 @@ def install_directory(directory_path: str, dst_path: str):
     install(entry.path, dst_path)
 
 if __name__ == '__main__':
-  subcommand = sys.argv[1] if len(sys.argv) > 1 else ""
-  match subcommand:
-    case "link":
-      REMOVED_PATH = f"{HOME}/Configurations/Removed"
-      if os.getuid() == 0:
-        if not os.path.exists(REMOVED_PATH):
-          print("first run this without sudo")
-          exit(1)
+  REMOVED_PATH = f"{HOME}/Configurations/Removed"
+  if os.getuid() == 0:
+    if not os.path.exists(REMOVED_PATH):
+      print("first run this without sudo")
+      exit(1)
 
-        install_directory("Scripts", "/usr/local/bin")
-        install_directory("Xorg", "/usr/share/X11/xorg.conf.d")
-        install_directory("Portage", "/etc/portage")
-        install("installed.txt", "/var/lib/portage/world")
-      else:
-        os.makedirs(REMOVED_PATH, exist_ok=True)
+    install_directory("Scripts", "/usr/local/bin")
+    install_directory("Xorg", "/usr/share/X11/xorg.conf.d")
+    install_directory("Portage", "/etc/portage")
+    install("installed.txt", "/var/lib/portage/world")
+  else:
+    os.makedirs(REMOVED_PATH, exist_ok=True)
 
-        install_directory("Config", f"{HOME}/.config")
-        install_directory("Home", f"{HOME}")
-        install("Wallpapers", f"{HOME}")
-        install("Scripts", f"{HOME}")
+    install_directory("Config", f"{HOME}/.config")
+    install_directory("Home", f"{HOME}")
+    install("Wallpapers", f"{HOME}")
+    install("Scripts", f"{HOME}")
 
-        print("you can now run this as sudo to install the rest")
-    case "update":
-      pass
-    case "":
-      print(f"Usage: {sys.argv[0]} [link|update]")
+    print("you can now run this as sudo to install the rest")
