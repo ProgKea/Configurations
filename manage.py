@@ -3,16 +3,22 @@
 import os
 import shutil
 import sys
+import subprocess
 
 # TODO: don't hard code the user
 HOME = "/home/programmer"
 
 def install(relative_path: str, dst: str):
-  os.makedirs(dst, exist_ok=True)
-
   configuration_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), relative_path)
+  is_single_file = os.path.isfile(configuration_path) and os.path.isfile(dst)
+  print(configuration_path)
+  if not is_single_file:
+    os.makedirs(dst, exist_ok=True)
+
   src_path = os.path.abspath(configuration_path)
   dst_path = f"{dst}/{os.path.basename(configuration_path)}"
+  if is_single_file:
+    dst_path = dst
   real_dst_path = os.path.realpath(dst_path)
 
   should_symlink = True
@@ -53,6 +59,8 @@ if __name__ == '__main__':
 
         install_directory("Scripts", "/usr/local/bin")
         install_directory("Xorg", "/usr/share/X11/xorg.conf.d")
+        install_directory("Portage", "/etc/portage")
+        install("installed.txt", "/var/lib/portage/world")
       else:
         os.makedirs(REMOVED_PATH, exist_ok=True)
 
