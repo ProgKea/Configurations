@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: STUDY Comment
+# key: study
+# --
+// STUDY(kd): $0

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+site=$(cat $HOME/Scripts/bookmarks.txt | awk '{print $1}' | dmenu $@ -p "Visit website:")
+query=$(cat $HOME/Scripts/bookmarks.txt | grep "^$site" | awk '{print $2}')
+
+if [ $query ]; then
+    xdg-open "$query"
+elif [ $site ]; then
+    xdg-open https://${site}
+fi

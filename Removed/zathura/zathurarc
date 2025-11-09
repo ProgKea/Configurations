@@ -1,0 +1,3 @@
+set recolor-lightcolor \#181818
+set recolor-darkcolor \#e4e4ef
+set selection-clipboard clipboard

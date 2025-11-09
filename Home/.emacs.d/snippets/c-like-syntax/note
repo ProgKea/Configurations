@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: NOTE Comment
+# key: note
+# --
+// NOTE(kd): $0

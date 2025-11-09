@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while read file
+do
+    case "$1" in
+        "C-c")
+            xclip -selection clipboard -t image/${file##*.} -i "$file"
+    esac
+done

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Scope
+# key: sc
+# --
+//- kd: $1
+{
+  $0
+}
