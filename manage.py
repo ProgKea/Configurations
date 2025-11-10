@@ -8,7 +8,7 @@ import subprocess
 # TODO: don't hard code the user
 HOME = "/home/programmer"
 
-def install(relative_path: str, dst: str):
+def install(relative_path: str, dst: str, copy=False):
   configuration_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), relative_path)
   is_single_file = os.path.isfile(configuration_path) and os.path.isfile(dst)
   if not is_single_file:
@@ -39,12 +39,16 @@ def install(relative_path: str, dst: str):
       should_symlink = False
 
   if should_symlink:
-    os.symlink(src_path, dst_path, target_is_directory=os.path.isdir(src_path))
-    print(f"{src_path} -> {dst_path}")
+    if copy:
+      shutil.copy(src_path, dst_path)
+      print(f"copied {src_path} -> {dst_path}")
+    else:
+      os.symlink(src_path, dst_path, target_is_directory=os.path.isdir(src_path))
+      print(f"linked {src_path} -> {dst_path}")
 
-def install_directory(directory_path: str, dst_path: str):
+def install_directory(directory_path: str, dst_path: str, copy=False):
   for entry in os.scandir(directory_path):
-    install(entry.path, dst_path)
+    install(entry.path, dst_path, copy)
 
 if __name__ == '__main__':
   REMOVED_PATH = f"{HOME}/Configurations/Removed"
@@ -54,7 +58,7 @@ if __name__ == '__main__':
       exit(1)
 
     install_directory("Scripts", "/usr/local/bin")
-    install_directory("Xorg", "/usr/share/X11/xorg.conf.d")
+    install_directory("Xorg", "/usr/share/X11/xorg.conf.d", copy=True)
     install_directory("Portage", "/etc/portage")
     install("installed.txt", "/var/lib/portage/world")
   else:

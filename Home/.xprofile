@@ -1,3 +1,4 @@
 clipmenud &
 xrandr --output DisplayPort-3 --mode 1920x1080 --rate 180
+unclutter &
 ~/.fehbg

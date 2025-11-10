@@ -98,3 +98,4 @@ chess https://www.chess.com/home
 glot https://glot.io/
 virustotal https://www.virustotal.com/gui/home/upload
 vpnjantit https://www.vpnjantit.com
+internetspeed https://www.fast.com

@@ -60,4 +60,5 @@ x11-misc/dmenu
 x11-misc/i3status
 x11-misc/sddm
 x11-misc/sxcs
+x11-misc/unclutter-xfixes
 x11-wm/i3
