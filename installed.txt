@@ -15,9 +15,12 @@ app-text/zathura-pdf-mupdf
 dev-build/cmake
 dev-debug/gdb
 dev-lang/go
+dev-lang/odin
 dev-python/uv
+dev-util/android-tools
 dev-util/cloc
 gui-libs/display-manager-init
+llvm-core/clang
 mail-client/thunderbird-bin
 media-gfx/feh
 media-gfx/flameshot
