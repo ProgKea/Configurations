@@ -46,3 +46,4 @@ handmade-episode-guide https://hero.handmade.network/episode/code#
 ai https://duckduckgo.com/?ia=chat&bang=true&q=
 wolf https://www.wolframalpha.com/input?i=
 perplexity https://www.perplexity.ai/search?q=
+arxiv https://arxiv.org/search/?searchtype=all&abstracts=show&order=-announced_date_first&query=

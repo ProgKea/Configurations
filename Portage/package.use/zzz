@@ -18,6 +18,13 @@
 # required by dev-qt/qtwayland-6.9.3::gentoo
 >=dev-qt/qtbase-6.9.3 wayland
 
+# required by gnome-base/gnome-keyring-48.0-r1::gentoo
+# required by virtual/secret-service-0-r1::gentoo
+# required by app-crypt/libsecret-0.21.7::gentoo
+# required by app-editors/vscode-1.106.0::gentoo
+# required by vscode (argument)
+>=app-crypt/gcr-3.41.2-r2:0 gtk
+
 app-editors/emacs imagemagick gtk dynamic-loading
 
 sys-kernel/installkernel grub dracut
