@@ -2,3 +2,6 @@ app-misc/tealdeer ~amd64
 net-im/vesktop-bin ~amd64
 www-client/torbrowser ~amd64
 dev-lang/odin ~amd64
+media-video/obs-studio ~amd64
+media-video/obs-vaapi ~amd64
+net-im/chatterino ~amd64

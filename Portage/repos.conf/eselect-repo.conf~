@@ -16,3 +16,7 @@ location = /var/db/repos/torbrowser
 sync-type = git
 sync-uri = https://github.com/MeisterP/torbrowser-overlay.git
 
+[another-brave-overlay]
+location = /var/db/repos/another-brave-overlay
+sync-type = git
+sync-uri = https://github.com/falbrechtskirchinger/another-brave-overlay.git

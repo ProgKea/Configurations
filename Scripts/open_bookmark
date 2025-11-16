@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 site=$(cat $HOME/Configurations/Scripts/bookmarks.txt | awk '{print $1}' | dmenu $@ -p "Visit website:")
-query=$(cat $HOME/Configurations/Scripts/bookmarks.txt | grep "^$site" | awk '{print $2}')
+query=$(cat $HOME/Configurations/Scripts/bookmarks.txt | grep "^$site" | awk '{print $2}' | head -n1)
 
 if [ $query ]; then
     xdg-open "$query"

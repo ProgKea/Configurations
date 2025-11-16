@@ -16,7 +16,7 @@ monkeytype https://monkeytype.com/
 hackage https://hackage.haskell.org/
 chatgpt https://chat.openai.com/chat
 duckai https://duck.ai
-scihub https://www.sci-hub.wf/
+scihub https://www.sci-hub.in/
 missingcsailMIT https://missing.csail.mit.edu/
 nixpkgs https://search.nixos.org/packages
 build-your-own-x https://github.com/codecrafters-io/build-your-own-x
@@ -99,3 +99,4 @@ glot https://glot.io/
 virustotal https://www.virustotal.com/gui/home/upload
 vpnjantit https://www.vpnjantit.com
 internetspeed https://www.fast.com
+grokipedia https://grokipedia.com/
